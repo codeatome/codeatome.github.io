@@ -2,57 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shwasa's Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Shwasa's Website</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Shwasa</h1>
-    <p>High School Rising Sophomore • Explorer • Code & Creativity</p>
-    <button id="theme-toggle">🌙 Toggle Theme</button>
-    <a class="resume-btn" href="resume.pdf" target="_blank">📄 Resume</a>
+  <header class="hero">
+    <div class="overlay">
+      <h1>Shwasa</h1>
+      <p>High School Student • Explorer • Creativity • Code</p>
+      <a class="btn" href="#projects">View Projects</a>
+    </div>
   </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      I'm a high school student passionate about computer science, machine learning, and creative coding. I built this site to share my projects, blog my learning journey, and connect with like-minded learners.
-    </p>
+    <div class="about-container">
+      <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic" />
+      <p>
+        I'm a high school student passionate about data science, machine learning, and creative coding. This site shares my projects, blog posts, and journey as a young developer.
+      </p>
+    </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <ul>
-      <li><strong>Stock Trend Visualizer</strong> – Uses Chart.js to display historical stock prices.</li>
-      <li><strong>Debate Timer Web App</strong> – Helps LD debaters practice speeches.</li>
-    </ul>
+    <div class="project-gallery">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="Project 1">
+        <h3>Stock Trend Visualizer</h3>
+        <p>Chart.js visual tool for stock prices.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="Project 2">
+        <h3>Debate Timer Web App</h3>
+        <p>Helps LD debaters time speeches.</p>
+      </div>
+    </div>
     <canvas id="stockChart" width="600" height="300"></canvas>
   </section>
 
   <section id="skills">
     <h2>Skills & Interests</h2>
     <p>
-      Python • HTML/CSS/JS • Chart.js • GitHub<br/>
-      Biology • Data Science • Public Speaking • Vocal Music
-      Fitness • Cross Country • Track • Swimming
+      Python • HTML/CSS/JS • Chart.js • GitHub<br />
+      Data Science • Public Speaking • Vocal Music
     </p>
   </section>
 
   <section id="blog">
     <h2>Blog</h2>
     <ul>
-      <li><strong>[Coming Soon]</strong> How I built my first GitHub site!</li>
-      <li><strong>[Coming Soon]</strong> My favorite Python libraries for data analysis</li>
+      <li><strong>[Coming Soon]</strong> Building My First GitHub Website</li>
+      <li><strong>[Coming Soon]</strong> Learning Chart.js with Stock Data</li>
     </ul>
   </section>
 
