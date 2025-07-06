@@ -1,11 +1,12 @@
-// Toggle dark mode
-document.getElementById('theme-toggle').addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-});
+// Theme Toggle (optional future enhancement)
+// const themeToggle = document.getElementById('theme-toggle');
+// themeToggle.addEventListener('click', () => {
+//   document.body.classList.toggle('dark-mode');
+// });
 
-// Simple Stock Chart with dummy data
+// Stock Chart
 const ctx = document.getElementById('stockChart').getContext('2d');
-const chart = new Chart(ctx, {
+new Chart(ctx, {
   type: 'line',
   data: {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
