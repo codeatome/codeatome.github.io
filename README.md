@@ -1,2 +1,2 @@
-# mshwasa.github.io
+# codeatome.github.io
 My Personal Website
