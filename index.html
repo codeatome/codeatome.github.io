@@ -2,38 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Shwasa's Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shwasa's Personal Website</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header class="hero" style="background-image: url('https://via.placeholder.com/1600x600');">
-  <div class="overlay">
-    <h1>Shwasa</h1>
-    <p>High School Student • Explorer • Creativity • Code</p>
-    <a class="btn" href="#gallery">See Gallery</a>
-  </div>
+  <header class="hero" style="background-image: url('images/hero.jpg');">
+    <div class="overlay full">
+      <h1>Shwasa</h1>
+      <p>High School Student • Explorer • Creativity • Code</p>
+      <a class="btn" href="#gallery">See Gallery</a>
+      <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">🌙 Dark Mode</button>
+    </div>
   </header>
-
-  <section id="gallery">
-  <h2>Photo Gallery</h2>
-  <div class="mosaic">
-    <img src="https://via.placeholder.com/400x300" alt="Gallery 1" />
-    <img src="https://via.placeholder.com/300x300" alt="Gallery 2" />
-    <img src="https://via.placeholder.com/500x300" alt="Gallery 3" />
-    <img src="https://via.placeholder.com/300x400" alt="Gallery 4" />
-    <img src="https://via.placeholder.com/400x250" alt="Gallery 5" />
-    <img src="https://via.placeholder.com/350x300" alt="Gallery 6" />
-  </div>
-</section>
 
   <section id="about">
     <h2>About Me</h2>
     <div class="about-container">
-      <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic" />
+      <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic" />
       <p>
-        I'm a high school student passionate about data science, machine learning, and creative coding. This site shares my projects, blog posts, and journey as a young developer.
+        I'm a high school student passionate about computer science, machine learning, and creative coding.
+        This site shares my projects, blog posts, and journey as a young developer.
       </p>
     </div>
   </section>
@@ -42,12 +35,12 @@
     <h2>Projects</h2>
     <div class="project-gallery">
       <div class="card">
-        <img src="https://via.placeholder.com/300x150" alt="Project 1">
+        <img src="images/project1.jpg" alt="Stock Visualizer" />
         <h3>Stock Trend Visualizer</h3>
         <p>Chart.js visual tool for stock prices.</p>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/300x150" alt="Project 2">
+        <img src="images/project2.jpg" alt="Debate Timer" />
         <h3>Debate Timer Web App</h3>
         <p>Helps LD debaters time speeches.</p>
       </div>
@@ -59,16 +52,50 @@
     <h2>Skills & Interests</h2>
     <p>
       Python • HTML/CSS/JS • Chart.js • GitHub<br />
-      Data Science • Public Speaking • Vocal Music
+      Computer Science • Public Speaking • Debate • Vocal Music
+      Cross Country • Track • Swimming
     </p>
+  </section>
+
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="carousel">
+      <div>
+        <a href="images/photo1.jpg" data-lightbox="gallery" data-title="Coding my first chart">
+          <img src="images/photo1.jpg" alt="1" />
+          <p class="caption">Coding my first chart</p>
+        </a>
+      </div>
+      <div>
+        <a href="images/photo2.jpg" data-lightbox="gallery" data-title="Debate tournament setup">
+          <img src="images/photo2.jpg" alt="2" />
+          <p class="caption">Debate tournament setup</p>
+        </a>
+      </div>
+      <div>
+        <a href="images/photo3.jpg" data-lightbox="gallery" data-title="Working on my portfolio">
+          <img src="images/photo3.jpg" alt="3" />
+          <p class="caption">Working on my portfolio</p>
+        </a>
+      </div>
+    </div>
   </section>
 
   <section id="blog">
     <h2>Blog</h2>
-    <ul>
-      <li><strong>[Coming Soon]</strong> Building My First GitHub Website</li>
-      <li><strong>[Coming Soon]</strong> Learning Chart.js with Stock Data</li>
-    </ul>
+    <article class="blog-post">
+      <h3>🚀 Building My First GitHub Website</h3>
+      <p class="blog-meta">Posted on July 06, 2025</p>
+      <p>
+        I recently launched my first personal website using GitHub Pages and custom domain setup from GoDaddy.
+        I learned how to use HTML, CSS, and a bit of JavaScript to showcase my projects and skills.
+        Setting up the custom domain and connecting it to my GitHub repository was a cool learning experience!
+      </p>
+      <p>
+        My favorite part was designing the gallery using a slick carousel and lightbox plugin.
+        It really makes the website feel more interactive and professional. I also embedded a live stock chart using Chart.js!
+      </p>
+    </article>
   </section>
 
   <section id="contact">
@@ -81,6 +108,46 @@
     <p>© 2025 Shwasa</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script src="darkModeToggle.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.carousel').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+      });
+    });
+
+    const ctx = document.getElementById('stockChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        datasets: [
+          {
+            label: 'Stock Price ($)',
+            data: [120, 125, 123, 130, 128],
+            borderColor: '#007acc',
+            backgroundColor: 'rgba(0, 122, 204, 0.1)',
+            tension: 0.2,
+            fill: true,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: false,
+          },
+        },
+      },
+    });
+  </script>
 </body>
 </html>
