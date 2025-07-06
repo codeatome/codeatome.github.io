@@ -1,0 +1,80 @@
+:root {
+  --bg: #f4f6f8;
+  --text: #222;
+  --primary: #007acc;
+  --nav-bg: #fefefe;
+}
+
+body.dark-mode {
+  --bg: #1e1e1e;
+  --text: #eee;
+  --primary: #90cdf4;
+  --nav-bg: #2c2c2c;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--primary);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.resume-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: white;
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 0.5rem 1rem;
+  background: white;
+  color: var(--primary);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+nav {
+  background-color: var(--nav-bg);
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+footer {
+  background-color: #e0e0e0;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
