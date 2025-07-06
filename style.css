@@ -20,32 +20,31 @@ section {
 
 /* Hero Section */
 .hero {
-  background-image: url('https://via.placeholder.com/1200x400');
   background-size: cover;
   background-position: center;
+  height: 100vh;
+  color: white;
   position: relative;
-  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
 }
 
-.overlay {
+.hero .overlay {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 2rem;
-  border-radius: 10px;
+  width: 100%;
 }
 
-.btn {
-  display: inline-block;
+.hero .btn {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background-color: #007acc;
-  color: white;
+  background-color: #ffffff;
+  color: #333;
+  border: none;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 5px;
   font-weight: bold;
 }
 
