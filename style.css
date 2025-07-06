@@ -1,11 +1,12 @@
-/* General Styles */
+/* Reset & Base */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: #fff;
   color: #333;
   line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h1, h2, h3 {
@@ -14,7 +15,7 @@ h1, h2, h3 {
 
 section {
   padding: 3rem 1rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -31,24 +32,35 @@ section {
   text-align: center;
 }
 
-.hero .overlay {
+.overlay.full {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
   width: 100%;
+  padding: 3rem;
 }
 
-.hero .btn {
+.btn {
+  display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   background-color: #ffffff;
   color: #333;
-  border: none;
-  border-radius: 6px;
   text-decoration: none;
+  border-radius: 5px;
   font-weight: bold;
 }
 
-/* About Section */
+/* Dark Mode Toggle Button */
+.theme-btn {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* About */
 .about-container {
   display: flex;
   align-items: center;
@@ -62,31 +74,7 @@ section {
   height: 150px;
 }
 
-#gallery {
-  padding: 3rem 1rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.mosaic {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 10px;
-}
-
-.mosaic img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.mosaic img:hover {
-  transform: scale(1.03);
-}
-
-/* Project Gallery */
+/* Projects */
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -97,9 +85,9 @@ section {
 .card {
   border: 1px solid #ddd;
   border-radius: 10px;
+  background-color: #f9f9f9;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  background-color: #f9f9f9;
 }
 
 .card img {
@@ -115,6 +103,21 @@ section {
   margin: 0 1rem 1rem;
 }
 
+/* Gallery Carousel */
+.carousel img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.caption {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
 /* Contact & Footer */
 #contact p, footer p {
   text-align: center;
@@ -123,17 +126,61 @@ section {
 footer {
   background-color: #f0f0f0;
   padding: 1rem;
-  margin-top: 3rem;
   font-size: 0.9rem;
+  margin-top: 3rem;
 }
 
-@media (max-width: 600px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
+/* Blog */
+#blog ul {
+  padding-left: 1.5rem;
+}
 
-  .profile-pic {
-    margin-bottom: 1rem;
-  }
+/* Blog Post Styling */
+.blog-post {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #fdfdfd;
+  border-left: 4px solid #007acc;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+
+.blog-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e4e4e4;
+}
+
+body.dark-mode .btn {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-mode footer {
+  background-color: #1a1a1a;
+  color: #aaa;
+}
+
+body.dark-mode .caption {
+  color: #ccc;
+}
+
+body.dark-mode .blog-post {
+  background: #1c1c1c;
+  border-color: #3399ff;
+}
+
+body.dark-mode .blog-meta {
+  color: #aaa;
 }
