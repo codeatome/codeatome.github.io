@@ -3,69 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shwasa's Personal Website</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Shwasa | High School Student</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #ffffff;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #2c3e50;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .hero img {
+      max-width: 300px;
+      width: 80%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #34495e;
+    }
+    .nav-links {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav-links a {
+      padding: 0.75rem 1.25rem;
+      background-color: #2d89ef;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .nav-links a:hover {
+      background-color: #246bb1;
+    }
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h3 {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
-
-  <!-- Hero Section -->
-  <header class="relative h-screen bg-cover bg-center" style="background-image: url('https://source.unsplash.com/1600x900/?student,books');">
-    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div class="text-center text-white">
-        <h1 class="text-5xl font-bold mb-4">Hi, I'm Shwasa!</h1>
-        <p class="text-xl">High School Sophomore | Research Enthusiast | Debate & Music Practitioner</p>
-        <a href="#portfolio" class="mt-6 inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg">View My Work</a>
-      </div>
-    </div>
+<body>
+  <header>
+    <h1>Shwasa</h1>
+    <p>High School Sophomore | Exploring Ideas, Building the Future</p>
   </header>
 
-  <!-- About Me -->
-  <section class="py-12 px-6 max-w-4xl mx-auto" id="about">
-    <h2 class="text-3xl font-semibold mb-4">About Me</h2>
-    <p class="text-lg leading-relaxed">I'm currently a sophomore in high school with a passion for computational biology, specifically with genomics and gene editing, competitive Lincoln-Douglas debate, and vocal music. I'm building skills in Python, statistics, and AI while staying involved in school leadership and volunteering.</p>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section class="bg-gray-100 py-12 px-6" id="portfolio">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-semibold mb-8 text-center">Portfolio</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img src="https://source.unsplash.com/400x250/?code" alt="Project 1" class="w-full">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Computational Biology Project</h3>
-            <p class="text-gray-600">Analyzed how mutations in cell cycle genes contributed to the rapid growth of lung cancer cells.</p>
-          </div>
-        </div>
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img src="https://source.unsplash.com/400x250/?music" alt="Project 2" class="w-full">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Solo Vocal Performance</h3>
-            <p class="text-gray-600">Performed in district music competitions and led school choir as a soprano section leader.</p>
-          </div>
-        </div>
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img src="https://source.unsplash.com/400x250/?debate" alt="Project 3" class="w-full">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">LD Debate Nationals Qualifier</h3>
-            <p class="text-gray-600">Ranked top 3 in regional competitions with a focus on policy ethics and AI governance.</p>
-          </div>
-        </div>
-      </div>
+  <section class="hero">
+    <img src="https://via.placeholder.com/300x300.png?text=Shwasa" alt="Shwasa portrait" />
+    <h2>Welcome to my personal website!</h2>
+    <div class="nav-links">
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
     </div>
   </section>
 
-  <!-- Resume Section -->
-  <section class="py-12 px-6 max-w-4xl mx-auto text-center" id="resume">
-    <h2 class="text-3xl font-semibold mb-4">Download My Resume</h2>
-    <p class="text-lg mb-6">Click the button below to download a PDF version of my resume.</p>
-    <a href="resume.pdf" download class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">Download Resume</a>
+  <section id="about">
+    <h3>About Me</h3>
+    <p>Hello! I'm Shwasa, a high school sophomore passionate about learning, creativity, and technology. I enjoy exploring topics in data science, participating in Lincoln-Douglas debate, and performing vocal music. This website is a window into my academic journey, projects, and interests.</p>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white text-center py-6">
-    <p>&copy; 2025 Shwasa's Portfolio. All rights reserved.</p>
-  </footer>
+  <section id="projects">
+    <h3>Projects</h3>
+    <ul>
+      <li><strong>Science Fair Project:</strong> Built a machine learning model to classify plant species using Python.</li>
+      <li><strong>Debate Tracker:</strong> A simple website to log debate tournament results and feedback (in progress).</li>
+      <li><strong>Music Portfolio:</strong> Compiled vocal recordings and performances into a gallery format.</li>
+    </ul>
+  </section>
 
+  <section id="resume">
+    <h3>Resume</h3>
+    <p><a href="resume.pdf" target="_blank">Download my resume (PDF)</a></p>
+    <ul>
+      <li><strong>GPA:</strong> 4.71 (weighted)</li>
+      <li><strong>Skills:</strong> Python, HTML/CSS, Public Speaking, Research, Vocal Performance</li>
+      <li><strong>Clubs:</strong> Debate Club, Choir, STEM Society</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>You can reach me at <a href="mailto:shwasa@email.com">shwasa@email.com</a>.</p>
+    <p>Also find me on:
+      <a href="https://github.com/shwasa" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/shwasa" target="_blank">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Shwasa. All rights reserved.
+  </footer>
 </body>
 </html>
