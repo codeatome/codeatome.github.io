@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shwasa | High School Student</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -12,6 +12,11 @@
       background-color: #f9f9f9;
       color: #333;
       line-height: 1.6;
+      transition: background 0.5s, color 0.5s;
+    }
+    body.dark {
+      background-color: #121212;
+      color: #eee;
     }
     header {
       background: #ffffff;
@@ -19,15 +24,24 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       text-align: center;
     }
+    body.dark header {
+      background: #1e1e1e;
+    }
     header h1 {
       font-size: 2.5rem;
       font-weight: 800;
       color: #2c3e50;
     }
+    body.dark header h1 {
+      color: #ccc;
+    }
     header p {
       font-size: 1.2rem;
       color: #555;
       margin-top: 0.5rem;
+    }
+    body.dark header p {
+      color: #aaa;
     }
     .hero {
       display: flex;
@@ -48,6 +62,9 @@
       font-weight: 600;
       color: #34495e;
     }
+    body.dark .hero h2 {
+      color: #ddd;
+    }
     .nav-links {
       margin-top: 2rem;
       display: flex;
@@ -67,9 +84,23 @@
     .nav-links a:hover {
       background-color: #246bb1;
     }
+    .toggle-darkmode {
+      margin-top: 1rem;
+      background: none;
+      border: 2px solid #2d89ef;
+      color: #2d89ef;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .toggle-darkmode:hover {
+      background-color: #2d89ef;
+      color: white;
+    }
     section {
       padding: 4rem 1.5rem;
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
     }
     h3 {
@@ -77,22 +108,156 @@
       color: #2c3e50;
       margin-bottom: 1rem;
     }
+    body.dark h3 {
+      color: #eee;
+    }
+
+    /* Gallery replaced by carousel styles */
+    .carousel-container {
+      position: relative;
+      max-width: 600px;
+      margin: 2rem auto 0;
+      overflow: hidden;
+      border-radius: 1rem;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    body.dark .carousel-container {
+      background: #222;
+    }
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+    .carousel-slide.active {
+      display: flex;
+    }
+    .carousel-slide img {
+      border-radius: 1rem;
+      max-width: 100%;
+      height: auto;
+    }
+    .carousel-slide figcaption {
+      margin-top: 0.5rem;
+      color: #666;
+    }
+    body.dark .carousel-slide figcaption {
+      color: #bbb;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(45,137,239,0.8);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 0 0.6rem;
+      cursor: pointer;
+      border-radius: 50%;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+    .carousel-btn:hover {
+      background: #246bb1;
+    }
+    .carousel-btn.prev {
+      left: 10px;
+    }
+    .carousel-btn.next {
+      right: 10px;
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
       color: #777;
     }
+    body.dark footer {
+      color: #aaa;
+    }
   </style>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      const togglePlayBtn = document.getElementById('togglePlay');
+
+      let currentIndex = 0;
+      let autoPlay = true;
+      let slideInterval = setInterval(nextSlide, 4000);
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      }
+
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
+      });
+
+      togglePlayBtn.addEventListener('click', () => {
+        if (autoPlay) {
+          clearInterval(slideInterval);
+          togglePlayBtn.textContent = 'Play Carousel';
+        } else {
+          slideInterval = setInterval(nextSlide, 4000);
+          togglePlayBtn.textContent = 'Pause Carousel';
+        }
+        autoPlay = !autoPlay;
+      });
+
+      function resetInterval() {
+        if(autoPlay){
+          clearInterval(slideInterval);
+          slideInterval = setInterval(nextSlide, 4000);
+        }
+      }
+
+      showSlide(currentIndex);
+    });
+  </script>
 </head>
 <body>
   <header>
     <h1>Shwasa</h1>
     <p>High School Sophomore | Exploring Ideas, Building the Future</p>
+    <button class="toggle-darkmode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
   </header>
 
   <section class="hero">
-    <img src="https://via.placeholder.com/300x300.png?text=Shwasa" alt="Shwasa portrait" />
+    <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/profile.jpg" alt="Shwasa portrait" />
     <h2>Welcome to my personal website!</h2>
     <div class="nav-links">
       <a href="#about">About Me</a>
@@ -114,6 +279,34 @@
       <li><strong>Debate Tracker:</strong> A simple website to log debate tournament results and feedback (in progress).</li>
       <li><strong>Music Portfolio:</strong> Compiled vocal recordings and performances into a gallery format.</li>
     </ul>
+
+    <div class="carousel-container">
+      <button class="carousel-btn prev" aria-label="Previous Image">&#10094;</button>
+      <div class="carousel">
+        <figure class="carousel-slide active">
+          <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/gallery1.jpg" alt="Science Fair Exhibit" />
+          <figcaption>Science Fair Exhibit</figcaption>
+        </figure>
+        <figure class="carousel-slide">
+          <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/gallery2.jpg" alt="Python Code Output" />
+          <figcaption>Python Code Output</figcaption>
+        </figure>
+        <figure class="carousel-slide">
+          <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/gallery3.jpg" alt="Debate Stage Moment" />
+          <figcaption>Debate Stage Moment</figcaption>
+        </figure>
+        <figure class="carousel-slide">
+          <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/gallery4.jpg" alt="Choir Performance" />
+          <figcaption>Choir Performance</figcaption>
+        </figure>
+        <figure class="carousel-slide">
+          <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/gallery5.jpg" alt="STEM Event" />
+          <figcaption>STEM Event</figcaption>
+        </figure>
+      </div>
+      <button class="carousel-btn next" aria-label="Next Image">&#10095;</button>
+    </div>
+    <button id="togglePlay" class="toggle-darkmode" style="margin-top:1rem;">Pause Carousel</button>
   </section>
 
   <section id="resume">
