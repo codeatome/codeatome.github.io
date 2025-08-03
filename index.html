@@ -81,8 +81,19 @@
     }
 
     .projects ul {
-      list-style: disc;
-      padding-left: 1.5rem;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .projects li {
+      margin-bottom: 2rem;
+    }
+
+    .project-image {
+      max-width: 100%;
+      margin-top: 0.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .resume ul {
@@ -123,9 +134,21 @@
   <div class="section projects" id="projects">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Lung Cancer Mini Research Project:</strong> Analyzed gene data set comparing lung cancer vs non lung cancer tissue.</li>
-      <li><strong>Debate Tracker:</strong> A simple website to log debate tournament results and feedback (in progress).</li>
-      <li><strong>Music Portfolio:</strong> Compiled vocal recordings and performances into a gallery format.</li>
+      <li>
+        <strong>Lung Cancer Mini Research Project:</strong>
+        <p>Analyzed gene data set comparing lung cancer vs non lung cancer tissue.</p>
+        <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/lung-project.jpg" alt="Lung Cancer Project" class="project-image" />
+      </li>
+      <li>
+        <strong>Debate Tracker:</strong>
+        <p>A simple website to log debate tournament results and feedback (in progress).</p>
+        <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/debate-tracker.jpg" alt="Debate Tracker" class="project-image" />
+      </li>
+      <li>
+        <strong>Music Portfolio:</strong>
+        <p>Compiled vocal recordings and performances into a gallery format.</p>
+        <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/music-portfolio.jpg" alt="Music Portfolio" class="project-image" />
+      </li>
     </ul>
   </div>
 
@@ -153,3 +176,4 @@
   </footer>
 </body>
 </html>
+
