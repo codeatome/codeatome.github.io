@@ -3,199 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shwasa Muttumu | Personal Site</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <title>Shwasa Muttumu</title>
   <style>
-    :root {
-      --primary-color: #005f73;
-      --accent-color: #0a9396;
-      --bg-color: #fefeff;
-      --text-color: #0f172a;
-      --muted-color: #64748b;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      padding: 2rem;
-      line-height: 1.7;
-    }
-
-    header {
-      text-align: left;
-      max-width: 800px;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #111;
+      max-width: 700px;
       margin: auto;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid #ccc;
+      padding: 2rem;
+      line-height: 1.6;
     }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: var(--primary-color);
+    h1, h2, h3 {
+      color: #2a2a2a;
     }
-
-    header p {
-      font-size: 1.1rem;
-      color: var(--muted-color);
-      margin-top: 0.5rem;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 2.5rem auto;
-    }
-
-    .section h2 {
-      font-size: 1.8rem;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-    }
-
-    .section p, .section ul {
-      font-size: 1rem;
-    }
-
-    .profile-img {
-      max-width: 200px;
-      border-radius: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .nav {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .nav a {
-      text-decoration: none;
-      font-weight: 600;
-      color: var(--accent-color);
-    }
-
-    .projects ul, .volunteer ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .projects li, .volunteer li {
-      margin-bottom: 2rem;
-    }
-
-    .project-image, .volunteer-image {
+    img {
       max-width: 100%;
+      height: auto;
       margin-top: 0.5rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
-
-    .resume ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .resume li {
-      margin-bottom: 0.5rem;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      font-size: 0.85rem;
-      color: #aaa;
+    .section {
+      margin-bottom: 3rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Shwasa Muttumu</h1>
-    <p>High School Sophomore | Exploring Ideas, Building the Future</p>
-    <div class="nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#volunteering">Volunteering</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </header>
+  <h1>Shwasa Muttumu</h1>
+  <p>Motivated and hardworking rising sophomore eager to develop skills and gain experience in technology, leadership, and medical research. Proven skills in project coordination and effective public speaking, complemented by a strong foundation in data management and successful fundraising strategies. Passionate about leveraging bioinformatics in healthcare.</p>
 
-  <div class="section" id="about">
-    <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/profile.jpg" alt="Shwasa" class="profile-img" />
-    <h2>About Me</h2>
-    <p>Hello! I'm Shwasa, a high school sophomore passionate about learning, creativity, and technology. I enjoy exploring topics in data science, participating in Lincoln-Douglas debate, and performing vocal music. This website is a window into my academic journey, projects, and interests.</p>
+  <div class="section">
+    <h2>Experience</h2>
+
+    <h3>Computational Biology Camp Member — MiRcore (July 2025)</h3>
+    <p>I participated in a weeklong intensive program focused on computational biology, working closely with specialists and PhD mentors to explore fields such as genomics, systems biology, and personalized medicine. For my final project in the program, I collaborated with a team of high school researchers to analyze lung cancer genomic data, using computational tools to identify mutations, biomarkers, and patterns. We presented our findings at a group research conference, which gave me hands-on experience in applying bioinformatics to address real-world medical challenges.</p>
+    <img src="mircore-project.jpg" alt="MiRcore research presentation" />
+
+    <h3>Student at Leadership Pre-College Program — Georgetown University (June 2025)</h3>
+    <p>I completed a two-week program focused on developing leadership skills through interactive assignments, collaborative projects, and guided reflection. The program allowed me to strengthen abilities like planning, decision-making, and effective communication while learning how to lead teams and navigate complex challenges. This experience helped me refine my leadership style and apply it to problem-solving in academic and community settings.</p>
+    <img src="georgetown-leadership.jpg" alt="Georgetown leadership session" />
   </div>
 
-  <div class="section projects" id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>Computational Biology Research – MiRcore (July 2025)</strong>
-        <p>I participated in a weeklong intensive program focused on computational biology, working closely with specialists and PhD mentors to explore fields such as genomics, systems biology, and personalized medicine. For my final project in the program, I collaborated with a team of high school researchers to analyze lung cancer genomic data, using computational tools to identify mutations, biomarkers, and patterns. We presented our findings at a group research conference, which gave me hands-on experience in applying bioinformatics to address real-world medical challenges.</p>
-        <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/mircore.jpg" alt="MiRcore Project" class="project-image" />
-      </li>
-      <li>
-        <strong>Georgetown Leadership Program (June 2025)</strong>
-        <p>I completed a two-week program focused on developing leadership skills through interactive assignments, collaborative projects, and guided reflection. The program allowed me to strengthen abilities like planning, decision-making, and effective communication while learning how to lead teams and navigate complex challenges. This experience helped me refine my leadership style and apply it to problem-solving in academic and community settings.</p>
-        <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/georgetown.jpg" alt="Georgetown Program" class="project-image" />
-      </li>
-      <li>
-        <strong>Debate Tracker</strong>
-        <p>A simple website to log debate tournament results and feedback (in progress).</p>
-        <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/debate-tracker.jpg" alt="Debate Tracker" class="project-image" />
-      </li>
-      <li>
-        <strong>Music Portfolio</strong>
-        <p>Compiled vocal recordings and performances into a gallery format.</p>
-        <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/music-portfolio.jpg" alt="Music Portfolio" class="project-image" />
-      </li>
-    </ul>
-  </div>
-
-  <div class="section volunteer" id="volunteering">
+  <div class="section">
     <h2>Volunteering</h2>
-    <ul>
-      <li>
-        <strong>SEWA USA (August 2022 – Present)</strong>
-        <p>Coordinated youth-led community outreach programs focusing on education and leadership development. Assisted in planning events and workshops to engage local students and families. Served as a team lead for service projects, encouraging participation and collaboration.</p>
-        <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/sewa.jpg" alt="SEWA USA Volunteering" class="volunteer-image" />
-      </li>
-      <li>
-        <strong>Library Volunteer – Dr. Martin Luther King Jr. Library (June 2025)</strong>
-        <p>Designed and taught public speaking and debate strategies to middle school students in a summer program. Developed engaging lesson plans to build critical thinking and argumentation skills. Led sessions to help students improve confidence and presentation abilities.</p>
-        <img src="https://raw.githubusercontent.com/codeatome/codeatome.github.io/main/Images/library.jpg" alt="Library Volunteering" class="volunteer-image" />
-      </li>
-    </ul>
+
+    <h3>SEWA USA (August 2022 – Current)</h3>
+    <p>Coordinated youth-led community outreach programs focusing on education and leadership development. Assisted in planning events and workshops to engage local students and families. Served as a team lead for service projects, encouraging participation and collaboration.</p>
+    <img src="sewa-volunteering.jpg" alt="SEWA volunteer event" />
+
+    <h3>Dr. Martin Luther King Jr. Library, San Jose, CA (June 2025)</h3>
+    <p>Designed and taught public speaking and debate strategies to middle school students in a summer program. Developed engaging lesson plans to build critical thinking and argumentation skills. Led sessions to help students improve confidence and presentation abilities.</p>
+    <img src="library-workshop.jpg" alt="Library teaching session" />
   </div>
 
-  <div class="section resume" id="resume">
-    <h2>Resume</h2>
-    <p><a href="resume.pdf" target="_blank">Download my resume (PDF)</a></p>
-    <ul>
-      <li><strong>GPA:</strong> 4.71 (weighted)</li>
-      <li><strong>Skills:</strong> Project coordination, Data management, Public speaking, Python, HTML/CSS, Vocal Performance</li>
-      <li><strong>Clubs:</strong> Debate Club, Choir, STEM Society</li>
-      <li><strong>Languages:</strong> English (fluent), Telugu (native), Spanish (conversational), Hindi (basic)</li>
-    </ul>
+  <div class="section">
+    <h2>Clubs and Activities</h2>
+    <p>Coming soon: Add your club roles, impact, and pictures here.</p>
+    <img src="club-photo.jpg" alt="Club activity placeholder" />
   </div>
 
-  <div class="section" id="contact">
+  <div class="section">
+    <h2>Education</h2>
+    <p>Notre Dame High School, San Jose, CA — Expected graduation: June 2028</p>
+  </div>
+
+  <div class="section">
+    <h2>Certifications</h2>
+    <p>Becoming a Leader: Motivate, Inspire, and Persuade — Georgetown University, June 2025</p>
+  </div>
+
+  <div class="section">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:mshwasa@gmail.com">mshwasa@gmail.com</a></p>
-    <p>
-      GitHub: <a href="https://github.com/codeatome" target="_blank">codeatome</a> | 
-      LinkedIn: <a href="https://www.linkedin.com/in/shwasa" target="_blank">shwasa</a>
-    </p>
+    <p>Email: mshwasa@gmail.com<br>
+    Phone: 341-345-8396</p>
+    <p><a href="resume.pdf" target="_blank">View My Resume</a></p>
   </div>
-
-  <footer>
-    &copy; 2025 Shwasa Muttumu. All rights reserved.
-  </footer>
 </body>
 </html>
