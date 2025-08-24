@@ -108,6 +108,32 @@
       color: #555;
     }
 
+    /* Gallery Styling */
+    .gallery {
+      margin-top: 3rem;
+    }
+    .gallery h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #0077b6;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
     /* Contact Section */
     .contact p {
       font-size: 1.2rem;
@@ -121,6 +147,7 @@
 </head>
 <body>
 
+  <!-- Navbar -->
   <div class="navbar">
     <a href="#about">About Me</a>
     <a href="#accomplishments">Accomplishments</a>
@@ -128,6 +155,7 @@
     <a href="#contact">Contact</a>
   </div>
 
+  <!-- Hero Section -->
   <div class="hero">
     <img src="profile.jpg" alt="Shwasa Muttumu Profile Photo" />
     <h1>Shwasa Muttumu</h1>
@@ -137,11 +165,13 @@
     </div>
   </div>
 
+  <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
     <p>Hi! I'm Shwasa, a passionate high school student interested in science, technology, and creating solutions to real-world problems. My goal is to innovate and inspire others through STEM and community initiatives.</p>
   </section>
 
+  <!-- Accomplishments Section -->
   <section id="accomplishments">
     <h2>Accomplishments</h2>
     <div class="card-container">
@@ -158,8 +188,22 @@
         <p>Organized coding workshops for middle school students to promote technology education.</p>
       </div>
     </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery">
+      <h3>Photo Gallery</h3>
+      <div class="gallery-grid">
+        <img src="images/project1.jpg" alt="Science Project" />
+        <img src="images/project2.jpg" alt="App Demo" />
+        <img src="images/project3.jpg" alt="Workshop" />
+        <img src="images/project4.jpg" alt="Team Presentation" />
+        <img src="images/project5.jpg" alt="Award Ceremony" />
+        <img src="images/project6.jpg" alt="STEM Event" />
+      </div>
+    </div>
   </section>
 
+  <!-- Blog Section -->
   <section id="blog">
     <h2>Blog</h2>
     <div class="card-container">
@@ -178,6 +222,7 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2>Contact Me</h2>
     <p>Email me at <a href="mailto:shwasa@example.com">shwasa@example.com</a></p>
