@@ -9,14 +9,16 @@
       font-family: 'Helvetica Neue', sans-serif;
       background-color: #f9f9fb;
       color: #2a2a2a;
-      max-width: 1000px;
-      margin: auto;
+      margin: 0;
       padding: 0;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
+
+    /* Navbar */
     .navbar {
       background-color: #0077b6;
-      padding: 1rem;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: center;
       gap: 2rem;
@@ -33,47 +35,153 @@
     .navbar a:hover {
       text-decoration: underline;
     }
-    .header {
+
+    /* Hero Section */
+    .hero {
       text-align: center;
-      padding: 3rem 1rem 2rem;
+      padding: 4rem 1rem;
+      background: #caf0f8;
     }
-    .header img {
-      width: 150px;
-      height: 150px;
+    .hero img {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #333;
+    }
+    .hero .cta {
       margin-top: 1rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-    .subtitle {
-      font-size: 1.1rem;
-      color: #555;
-      margin-top: 0.5rem;
+    .hero .cta a {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: #0077b6;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
     }
-    .main-content {
-      padding: 2rem;
+    .hero .cta a:hover {
+      background: #005f86;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
       text-align: center;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #0077b6;
+    }
+
+    /* Cards for Accomplishments and Blog */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #0077b6;
+    }
+    .card p {
+      color: #555;
+    }
+
+    /* Contact Section */
+    .contact p {
+      font-size: 1.2rem;
+    }
+    .contact a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
   <div class="navbar">
-    <a href="/about-me">About Me</a>
-    <a href="/accomplishments">Accomplishments</a>
-    <a href="/blog">Blog</a>
-    <a href="/contact">Contact</a>
+    <a href="#about">About Me</a>
+    <a href="#accomplishments">Accomplishments</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <div class="header">
-    <h1>Shwasa Muttumu</h1>
-    <div class="subtitle">High School Student | Science and Tech Interested</div>
+  <div class="hero">
     <img src="profile.jpg" alt="Shwasa Muttumu Profile Photo" />
+    <h1>Shwasa Muttumu</h1>
+    <p>High School Student | Innovator | Future Technologist</p>
+    <div class="cta">
+      <a href="#about">Learn More About Me</a>
+    </div>
   </div>
 
-  <div class="main-content">
-    <p>Welcome to my personal website! Click the links above to explore more about me, my accomplishments, blog posts, and how to contact me.</p>
-  </div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I'm Shwasa, a passionate high school student interested in science, technology, and creating solutions to real-world problems. My goal is to innovate and inspire others through STEM and community initiatives.</p>
+  </section>
+
+  <section id="accomplishments">
+    <h2>Accomplishments</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Science Fair Winner</h3>
+        <p>Developed a water quality testing system that won first place at the regional science fair.</p>
+      </div>
+      <div class="card">
+        <h3>App Development</h3>
+        <p>Created a mobile app to track air quality and provide real-time alerts to users.</p>
+      </div>
+      <div class="card">
+        <h3>STEM Outreach</h3>
+        <p>Organized coding workshops for middle school students to promote technology education.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>How I Started Coding</h3>
+        <p>My journey into programming and how I built my first app.</p>
+      </div>
+      <div class="card">
+        <h3>Future of AI</h3>
+        <p>Exploring the impact of artificial intelligence on society and education.</p>
+      </div>
+      <div class="card">
+        <h3>Science for Good</h3>
+        <p>Why technology and innovation should always aim to make the world a better place.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email me at <a href="mailto:shwasa@example.com">shwasa@example.com</a></p>
+  </section>
 
 </body>
 </html>
